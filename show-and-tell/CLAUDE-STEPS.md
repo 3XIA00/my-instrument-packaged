@@ -9,16 +9,16 @@ not the claude.ai website: the website can't write files to your repo.)*
 ## My four answers (fill these in first)
 
 1. **What it is** — what does my instrument do?
-   > (your answer)
+   > A cross-vendor memory MCP that lets agents from different providers (Claude Code, Codex, Gemini, etc.) share memory.
 
 2. **The idea behind it** — how does it help me think better with AI?
-   > (your answer)
+   > It saves me significant time syncing agent memories when I work with multiple agents.
 
 3. **One wrong thing + one fix** — what broke, and what I did about it:
-   > (your answer)
+   > Agents didn't know when to add memory. I added a skill and docstrings to guide agents in using the MCP.
 
 4. **What feedback I want** — the question I'm ending my show with:
-   > (your answer)
+   > How can I test whether agents actually use this MCP, and whether it actually improves their performance?
 
 ## Claude: your instructions
 

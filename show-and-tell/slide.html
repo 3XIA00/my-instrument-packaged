@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cross-Vendor Memory MCP — Show &amp; Tell</title>
+<style>
+  :root {
+    --bg: #0e1013;
+    --card: #181b21;
+    --line: #2a2f38;
+    --text: #f4f1ea;
+    --muted: #a9adb6;
+    --amber: #ffad1f;
+    --amber-dim: rgba(255, 173, 31, 0.12);
+    --pad: clamp(24px, 3.4vw, 56px);
+    --gap: clamp(14px, 1.8vw, 28px);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    overflow: hidden;
+  }
+  .slide {
+    height: 100vh;
+    padding: var(--pad);
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    gap: var(--gap);
+  }
+
+  /* ---------- Header ---------- */
+  header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    border-bottom: 3px solid var(--amber);
+    padding-bottom: clamp(8px, 1vh, 14px);
+  }
+  header h1 {
+    font-size: clamp(28px, 4.4vh, 46px);
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+  header h1 span { color: var(--amber); }
+  header .tag {
+    font-size: clamp(14px, 2vh, 20px);
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-weight: 600;
+  }
+
+  /* ---------- Answers 1–3 ---------- */
+  .answers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap);
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-top: 5px solid var(--amber);
+    border-radius: 10px;
+    padding: clamp(14px, 2.2vh, 24px) clamp(16px, 1.6vw, 26px);
+  }
+  .card h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: clamp(15px, 2.2vh, 22px);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--amber);
+    font-weight: 700;
+    margin-bottom: clamp(8px, 1.2vh, 14px);
+  }
+  .card h2 .n {
+    display: inline-grid;
+    place-items: center;
+    width: 1.6em; height: 1.6em;
+    border-radius: 50%;
+    background: var(--amber);
+    color: var(--bg);
+    font-size: 0.95em;
+    letter-spacing: 0;
+  }
+  .card p {
+    font-size: clamp(19px, 3vh, 30px);
+    line-height: 1.3;
+    font-weight: 500;
+  }
+  .card p + p { margin-top: clamp(6px, 1vh, 12px); }
+  .card .lbl {
+    color: var(--muted);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.7em;
+    letter-spacing: 0.08em;
+    margin-right: 0.3em;
+  }
+
+  /* ---------- Answer 4: the climax ---------- */
+  .ask {
+    background: var(--amber-dim);
+    border: 3px solid var(--amber);
+    border-radius: 14px;
+    padding: clamp(18px, 3vh, 36px) clamp(22px, 3vw, 48px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .ask h2 {
+    font-size: clamp(16px, 2.4vh, 24px);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--amber);
+    font-weight: 800;
+    margin-bottom: clamp(8px, 1.4vh, 16px);
+  }
+  .ask p {
+    font-size: clamp(34px, 6.2vh, 66px);
+    line-height: 1.15;
+    font-weight: 800;
+    letter-spacing: -0.015em;
+  }
+  .ask em {
+    font-style: normal;
+    color: var(--amber);
+  }
+</style>
+</head>
+<body>
+<main class="slide">
+
+  <header>
+    <h1>Cross-Vendor <span>Memory</span> MCP</h1>
+    <div class="tag">Show &amp; Tell</div>
+  </header>
+
+  <section class="answers">
+    <article class="card">
+      <h2><span class="n">1</span>What it is</h2>
+      <p>A cross-vendor memory MCP that lets agents from different providers (Claude Code, Codex, Gemini, etc.) share memory.</p>
+    </article>
+
+    <article class="card">
+      <h2><span class="n">2</span>The idea</h2>
+      <p>It saves me significant time syncing agent memories when I work with multiple agents.</p>
+    </article>
+
+    <article class="card">
+      <h2><span class="n">3</span>Broke &amp; fixed</h2>
+      <p><span class="lbl">Wrong</span>Agents didn't know when to add memory.</p>
+      <p><span class="lbl">Fix</span>I added a skill and docstrings to guide agents in using the MCP.</p>
+    </article>
+  </section>
+
+  <section class="ask">
+    <h2>4 &middot; The feedback I want</h2>
+    <p>How can I test whether agents <em>actually use</em> this MCP &mdash; and whether it <em>actually improves</em> their performance?</p>
+  </section>
+
+</main>
+</body>
+</html>
